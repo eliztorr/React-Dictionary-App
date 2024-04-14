@@ -21,8 +21,6 @@ function search(word = keyword) {
   let apiKey = "95302ab7f46ea49b23t9315bo4bc8de7";
   let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${word}&key=${apiKey}`;
 
-  console.log("SheCodes API URL:", apiUrl);
-
   axios.get(apiUrl)
     .then(handleDictionResponse)
     .catch(error => {
