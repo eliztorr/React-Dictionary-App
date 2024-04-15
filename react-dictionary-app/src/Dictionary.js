@@ -5,38 +5,33 @@ import Photos from "./Photos";
 import "./Dictionary.css";
 
 export default function Dictionary(props) {
-  let [keyword, setKeyword] = useState(props.defaultKeyword);
-  let [results, setResults] = useState(null);
-  let [loaded, setLoaded] = useState(false);
-  let [photos, setPhotos] = useState(null);
+  const [keyword, setKeyword] = useState(props.defaultKeyword);
+  const [loaded, setLoaded] = useState(false);
+  const [definition, setDefinition] = useState(null);
+  const [photos, setPhotos] = useState([]);
 
-  function handleDictionResponse(response) {
-   setResults(response.data[0]);
- }
- function handlePexelsResponse(response) {
-  setPhotos(response.data.photos);
-}
+  function handleImages(response) {
+    setPhotos(response.data.photos);
+  }
 
-function search(word = keyword) {
-  let apiKey = "95302ab7f46ea49b23t9315bo4bc8de7";
-  let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${word}&key=${apiKey}`;
+  function handleResponse(response) {
+    setDefinition(response.data);
+    let apiKey = "95302ab7f46ea49b23t9315bo4bc8de7";
+    let apiUrl = `https://api.shecodes.io/images/v1/search?query=${response.data.word}&key=${apiKey}`;
+    axios
+      .get(apiUrl, { headers: { Authorization: `Bearer ${apiKey}` } })
+      .then(handleImages);
+  }
 
-  axios.get(apiUrl)
-    .then(handleDictionResponse)
-    .catch(error => {
-      console.error('Error fetching dictionary data:', error);
-    })
-    .then(() => {
-      let pexelsApiKey = "qisjqKrG9zgRcM7qJNdLIN4W7H3DWOI3iWB1dpYBH1rPWKbKJYWntYB2";
-      let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${word}&per_page=9`;
-      let headers = { Authorization: `Bearer ${pexelsApiKey}` }; 
-      
-      axios.get(pexelsApiUrl, { headers: headers })
-        .then(handlePexelsResponse)
-        .catch(error => {
-          console.error('Error fetching photos data:', error);
-        });
-    });
+  function load() {
+    setLoaded(true);
+    search();
+  }
+
+  function search() {
+    let apiKey = "95302ab7f46ea49b23t9315bo4bc8de7";
+    let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=${apiKey}`;
+    axios.get(apiUrl).then(handleResponse);
   }
 
   function handleSubmit(event) {
@@ -48,30 +43,31 @@ function search(word = keyword) {
     setKeyword(event.target.value);
   }
 
-  function load() {
-    setLoaded(true);
-    search();
-  }
-
   if (loaded) {
     return (
       <div className="Dictionary">
         <section>
-          <h1>Dictionary</h1>
           <form onSubmit={handleSubmit}>
-            <input
+            <label>Search a word 
+            <input 
               type="search"
-              onChange={handleKeywordChange}
+              placeholder="Search for a word"
               defaultValue={props.defaultKeyword}
+              autoFocus={true}
+              className="form-control search-input"
+              onChange={handleKeywordChange}
             />
+            </label>
           </form>
         </section>
-        <Results results={results} />
+        <Results definition={definition} />
         <Photos photos={photos} />
       </div>
-    );
+  );
+      
   } else {
     load();
-    return "Loading";
+    return "Loading!"
   }
+
 }

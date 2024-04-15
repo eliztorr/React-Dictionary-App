@@ -9,19 +9,17 @@
     background: white;
     padding: 30px;
     border-radius: 6px;
-    box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
+    box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
     margin: 20px 0;
   }
   
   .Dictionary input {
-    width: 20%;
+    width: 100%;
     border-radius: 6px;
     padding: 6px 10px;
     color: #333;
     border: 1px solid #ddd;
+    margin-top: 10px; 
   }
   
-  .Dictionary .hint {
-    font-size: 11px;
-    margin-top: 5px;
-  }
+ 

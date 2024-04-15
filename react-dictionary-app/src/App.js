@@ -1,21 +1,43 @@
-import logo from "./logo.png";
-import "./App.css";
 import Dictionary from "./Dictionary";
+import "./App.css";
 
-export default function App() {
+function App() {
   return (
     <div className="App">
       <div className="container">
         <header className="App-header">
-        <img src={logo} className="App-logo img-fluid" alt="logo" />
+          <h1>Dictionary</h1>
         </header>
-        <main>
-          <Dictionary defaultKeyword="rainbow" />
-        </main>
-        <footer className="App-footer">
-          <small>Coded by Elizabeth Torralbo for SheCodes</small>
+        <Dictionary defaultKeyword="rainbow" />
+        <footer>
+          This project was coded by Elizabeth Torralbo for {" "}
+          <a
+            href="https://www.shecodes.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            SheCodes
+          </a>{" "}
+          and is{" "}
+          <a
+            href="https://splendid-cactus-7e64db.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            open-sourced on GitHub
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://github.com/eliztorr/React-Dictionary-App"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            hosted on Netlify
+          </a>
         </footer>
       </div>
     </div>
   );
 }
+
+export default App;
