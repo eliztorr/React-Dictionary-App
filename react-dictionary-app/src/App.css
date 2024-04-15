@@ -2,25 +2,17 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 2vh;
-  pointer-events: none;
-}
-
 .App-header {
-  background-color: #9a6497;
-  min-height: 10vh;
+  background-image: url("header.png"); 
+  font-size: 50px; 
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {

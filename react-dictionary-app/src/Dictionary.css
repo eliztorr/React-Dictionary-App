@@ -1,15 +1,15 @@
 .Dictionary h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 38px;
+    font-size: 46px;
     font-weight: bold;
     margin-bottom: 20px;
   }
   
   .Dictionary section {
-    background: white;
+    background: #ffcbcb;
     padding: 30px;
     border-radius: 6px;
-    box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
+    box-shadow: 0 10px 20px rgb(0 0 0 / 15%);
     margin: 20px 0;
   }
   
