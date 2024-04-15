@@ -9,13 +9,13 @@ export default function Results(props) {
     return (
       <div className="Results">
         <section>
-          <h1>{props.definition.word}</h1>
+          <h2>{props.definition.word}</h2>
           <Phonetic phonetic={props.definition.phonetic} />
         </section>
 
         {props.definition.meanings.map(function (meaning, index) {
           return (
-            <section key={index}>
+            <section className="meaning-grid" key={index}>
               <Meaning meaning={meaning} />
             </section>
           );

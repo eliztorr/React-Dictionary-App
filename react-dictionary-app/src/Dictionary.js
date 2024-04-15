@@ -50,10 +50,11 @@ export default function Dictionary(props) {
     return (
       <div className="Dictionary">
         <section>
-          <form onSubmit={handleSubmit}>
-            <label>Search a word 
+        <form onSubmit={handleSubmit} className="search-form">
+            <label>Type the word you want to search 
             <input 
               type="search"
+              id="searchInput"
               placeholder="Search for a word"
               defaultValue={props.defaultKeyword}
               autoFocus={true}
@@ -61,11 +62,13 @@ export default function Dictionary(props) {
               onChange={handleKeywordChange}
             />
             </label>
+          
           </form>
         </section>
         <Results definition={definition} />
         <Photos photos={photos} />
       </div>
+      
   );
       
   } else {
