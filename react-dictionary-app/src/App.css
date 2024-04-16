@@ -1,16 +1,17 @@
 .App {
   text-align: center;
-  background:#f4f4f4; 
+  background:#222222; 
+  color: #cccccc; 
 }
 
 .App-header {
-  background:  #ffffff; 
+  background:   #333333; 
   min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: black;
+  color: #ffffff;
 }
 
 .App h1{
@@ -24,13 +25,13 @@
 
 .App footer{
   font-size: 14px; 
-  color: gray; 
+  color: #999999; 
   padding: 20px; 
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 .App footer a{
-  color: rgb(65, 62, 62); 
+  color: #cec3c3;
   text-decoration: none; 
 }
 
