@@ -20,7 +20,7 @@ function App() {
           </a>{" "}
           and is{" "}
           <a
-            href="https://splendid-cactus-7e64db.netlify.app/"
+            href="https://github.com/eliztorr/React-Dictionary-App"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -28,7 +28,7 @@ function App() {
           </a>{" "}
           and{" "}
           <a
-            href="https://github.com/eliztorr/React-Dictionary-App"
+            href="https://dictionary-app-react-add-on.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
           >
