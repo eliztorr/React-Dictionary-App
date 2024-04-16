@@ -12,7 +12,7 @@ function App() {
         <footer>
           This project was coded by Elizabeth Torralbo for {" "}
           <a
-            href="https://www.shecodes.io/"
+            href="https://www.shecodes.io/users/59109-elizabeth-torralbo-valenzuela/"
             target="_blank"
             rel="noopener noreferrer"
           >
