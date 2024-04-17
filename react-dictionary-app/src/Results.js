@@ -15,7 +15,7 @@ export default function Results(props) {
 
         {props.definition.meanings.map(function (meaning, index) {
           return (
-            <section className="meaning-grid" key={index}>
+            <section key={index}>
               <Meaning meaning={meaning} />
             </section>
           );
